@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "poppins" , sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: rgb(57,27,35);
+    background: linear-gradient(0deg, rgba(57,27,35,1) 0%, rgba(44,51,123,1) 40%, rgba(1,9,48,1) 100%);
+}
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 1.3rem 5%;
+    background-color: rgb(0, 0, 0,.1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo{
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbar a {
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 2.5rem;
+}
+#check{
+display: none;
+}
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+@media ( max-width: 992px) {
+    .header{
+        padding: 1.3rem 4%;
+    }
+}
+@media ( max-width: 768px) {
+   .icons{
+    display: inline-flex;
+   }
+   #check:checked~.icons #menu-icon{
+    display: none;
+   }
+   .icons #close-icon{
+    display: none;
+   }
+   #check:checked~.icons #close-icon{
+    display: block;
+   }
+   .navbar{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 0;
+    background-color: rgb(16, 6, 70);
+    overflow: hidden;
+    transition: .3s ease;
+   } 
+   .navbar a{
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    backdrop-filter: blur(50px);
+    box-shadow: 0.5rem 1rem rgba(0 ,0,0,.1);
+transform: translateY(-50px);
+
+   }
+   #check:checked~.navbar{
+    height: 17.7rem;
+   }
+}
+
